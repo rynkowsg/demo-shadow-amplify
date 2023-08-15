@@ -1,4 +1,4 @@
-(ns demo.config)
+(ns demo.main.config)
 
 (def debug? ^boolean goog.DEBUG)
 

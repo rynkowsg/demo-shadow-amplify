@@ -11,7 +11,7 @@
                       :js-options      {:js-provider :external
                                         :external-index ".shadow-cljs/index.js"}
 
-                      :modules         {:main   {:entries [demo.core]}}
+                      :modules         {:main   {:entries [demo.main.core]}}
 
                       :compiler-options {:warnings           {:undeclared-var false}
                                          :output-feature-set :es2018}

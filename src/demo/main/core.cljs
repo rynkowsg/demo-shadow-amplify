@@ -1,7 +1,7 @@
-(ns demo.core
+(ns demo.main.core
   (:require
     ["aws-amplify" :refer [Amplify Auth Hub]]
-    [demo.config :as config]
+    [demo.main.config :as config]
     [oops.core :refer [oapply ocall oget oset!]]
     [reagent.dom :as r-dom]))
 
