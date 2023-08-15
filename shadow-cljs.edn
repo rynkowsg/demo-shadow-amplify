@@ -8,7 +8,9 @@
                       :output-dir      "resources/public/js"
                       :asset-path      "/js"
                       :module-loader   true
-                      :js-options      {:js-package-dirs ["node_modules"]}
+                      :js-options      {:js-provider :external
+                                        :external-index ".shadow-cljs/index.js"}
+
                       :modules         {:main   {:entries [demo.core]}}
 
                       :compiler-options {:warnings           {:undeclared-var false}
