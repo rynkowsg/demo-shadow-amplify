@@ -1,11 +1,22 @@
-// import posthog from "posthog-js";
+import { posthog } from "posthog-js";
 
-export const initPosthog = async () => {
+export const nativeInit = async () => {
   try {
-    // posthog.init(apiKey, {
-    //   api_host,
-    // });
-    console.log("[POSTHOG] Init")
+    console.log("[POSTHOG] Init...")
+    posthog.init("fake", {
+      api_host: "fake"
+    });
+    console.log("[POSTHOG] Init...DONE")
+  } catch (err) {
+    console.log("[POSTHOG] ERROR", err);
+  }
+};
+
+export const nativeCapture = (evt, props) => {
+  try {
+    console.log("[POSTHOG] Capture...")
+    posthog.capture(evt, props);
+    console.log("[POSTHOG] Capture... DONE")
   } catch (err) {
     console.log("[POSTHOG] ERROR", err);
   }

@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "aws-amplify": "5.3.7",
+    "posthog-js": "^1.76.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
@@ -23,7 +24,7 @@
     "g/webpack:watch": "npx webpack --config webpack.config.js --progress --watch",
     "g/shadow": "clj -M -m shadow.cljs.devtools.cli server",
     "g/shadow:watch": "clj -M -m shadow.cljs.devtools.cli watch :dev",
-    "g/babel": "npx babel ./src --extensions .ts,.tsx --out-dir ./src/gen/",
-    "g/babel:watch": "npx babel ./src --extensions .ts,.tsx --out-dir ./src/gen/ --watch"
+    "g/babel": "npx babel ./src/main --extensions .ts,.tsx --out-dir ./src/gen/",
+    "g/babel:watch": "npx babel ./src/main --extensions .ts,.tsx --out-dir ./src/gen/ --watch"
   }
 }

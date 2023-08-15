@@ -2,7 +2,7 @@
   (:require
     ["aws-amplify" :refer [Amplify Auth Hub]]
     [demo.main.config :as config]
-    ["/demo/common/posthog/v1" :as posthog]
+    [demo.common.posthog.posthog :as posthog]
     [oops.core :refer [oapply ocall oget oset!]]
     [reagent.dom :as r-dom]))
 
@@ -71,6 +71,6 @@
 
 (defn ^:export init []
   (js/console.log "HELLO")
-  (posthog/initPosthog)
+  (posthog/init)
   (init-amplify)
   (mount-root))
