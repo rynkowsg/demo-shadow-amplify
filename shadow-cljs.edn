@@ -1,0 +1,25 @@
+{:jvm-opts     [#env ["SHADOW_XMX_FLAG" :default "-Xmx1G"]]
+ :deps         true
+
+ :http         {:port #env ["SHADOW_PORT" :as :int :default 9630]}
+ :dev-http     {#env ["DEV_HTTP_PORT" :as :int :default 8060] "resources/public"}
+
+ :builds       {:dev {:target          :browser
+                      :output-dir      "resources/public/js"
+                      :asset-path      "/js"
+                      :module-loader   true
+                      :js-options      {:js-package-dirs ["node_modules"]}
+                      :modules         {:main   {:entries [demo.core]}}
+
+                      :compiler-options {:warnings           {:undeclared-var false}
+                                         :output-feature-set :es2018}
+                      :devtools         {:after-load demo.core/re-render}
+                      :closure-defines {demo.main.config/app-url                         "https://example.com"
+                                        demo.main.config/aws-appsync-graphql-endpoint    "https://<some=token>.appsync-api.eu-west-1.amazonaws.com/graphql",
+                                        demo.main.config/aws-appsync-region              "eu-west-1",
+                                        demo.main.config/aws-appsync-authentication-type "AMAZON_COGNITO_USER_POOLS",
+                                        demo.main.config/aws-appsync-api-key             "<api-key>"
+                                        demo.main.config/cognito-domain                  "<domain>.auth.eu-west-1.amazoncognito.com"
+                                        demo.main.config/identity-pool-id                "<pool-idl>"
+                                        demo.main.config/user-pool-id                    "<user-pool-id>"
+                                        demo.main.config/user-pool-web-client-id         "<user-pool-web-client-id>"}}}}

@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "shadow-cljs": "2.25.2"
+  },
+  "dependencies": {
+    "aws-amplify": "5.3.7",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "scripts": {
+    "g/shadow-server": "clj -M -m shadow.cljs.devtools.cli watch :dev"
+  }
+}
