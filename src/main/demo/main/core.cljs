@@ -23,19 +23,20 @@
   []
   (mount-root))
 
-(def amplify-config {:identityPoolId                 config/identity-pool-id
-                     :region                         "eu-west-1"
-                     :userPoolId                     config/user-pool-id
-                     :userPoolWebClientId            config/user-pool-web-client-id
-                     :aws_appsync_graphqlEndpoint    config/aws-appsync-graphql-endpoint
-                     :aws_appsync_region             "eu-west-1"
-                     :aws_appsync_authenticationType "AMAZON_COGNITO_USER_POOLS"
-                     :aws_appsync_apiKey             config/aws-appsync-api-key})
-
 (defn init-amplify
   []
   ;; Configure Amplify
-  (.configure Amplify (clj->js amplify-config)))
+  (ocall
+    Amplify
+    :configure
+    (clj->js {:identityPoolId                 config/identity-pool-id
+              :region                         "eu-west-1"
+              :userPoolId                     config/user-pool-id
+              :userPoolWebClientId            config/user-pool-web-client-id
+              :aws_appsync_graphqlEndpoint    config/aws-appsync-graphql-endpoint
+              :aws_appsync_region             "eu-west-1"
+              :aws_appsync_authenticationType "AMAZON_COGNITO_USER_POOLS"
+              :aws_appsync_apiKey             config/aws-appsync-api-key})))
 
   ;;; Configure Amplify.Auth
   ;(ocall
