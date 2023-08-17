@@ -18,7 +18,7 @@ module.exports = {
         //     'node_modules'
         // ],
         alias: {
-            Demo: path.resolve(__dirname, 'src/gen/'),
+            // Demo: path.resolve(__dirname, 'src/gen/'),
         },
     }
 }

@@ -60,7 +60,7 @@ module.exports =     {
     ],
     plugins: [
         addIndexSuffixForRelativeImportDirs,
-        addCustomPrefixToRelativeImports,
+        // addCustomPrefixToRelativeImports,
     ],
     // Do not apply this babel config to node_modules.
     // Shadow-CLJS also runs babel over node_modules and we don't want this
