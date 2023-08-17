@@ -1,15 +1,15 @@
 import { posthog } from "posthog-js";
-import { printLog } from "../printer";
+ import { printLog } from "../printer";
 
 export const nativeInit = async () => {
   try {
-    printLog("[POSTHOG1] Init...")
+    printLog("[printLog] Init...")
     posthog.init("fake", {
       api_host: "fake"
     });
-    printLog("[POSTHOG1] Init...DONE")
+    printLog("[printLog] Init...DONE")
   } catch (err) {
-    printLog("[POSTHOG1] ERROR", err);
+    printLog("[printLog] ERROR", err);
   }
 };
 
