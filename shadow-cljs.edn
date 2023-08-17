@@ -7,12 +7,9 @@
  :builds       {:dev {:target          :browser
                       :output-dir      "resources/public/js"
                       :asset-path      "/js"
-                      :module-loader   true
                       :js-options      {:js-provider :external
                                         :external-index ".shadow-cljs/index.js"}
-
                       :modules         {:main   {:entries [demo.main.core]}}
-
                       :compiler-options {:warnings           {:undeclared-var false}
                                          :output-feature-set :es2018}
                       :devtools         {:after-load demo.core/re-render}
